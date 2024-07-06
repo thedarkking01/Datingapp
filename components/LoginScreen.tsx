@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Pressable, GestureResponderEvent } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable, GestureResponderEvent, ImageBackground } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -9,68 +10,98 @@ const LoginScreen: React.FC = () => {
     console.log('Login:', { email, password });
   };
 
-    function onPress(event: GestureResponderEvent): void {
-        throw new Error('Function not implemented.');
-    }
+  const onPress = (event: GestureResponderEvent): void => {
+    handleLogin();
+  };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      {/* <Button title="Login" onPress={handleLogin} /> */}
-      <Pressable style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>LOGIN</Text>
-    </Pressable>
-    </View>
+    <ImageBackground source={require('../assets/images/couple2.jpg')} style={styles.backgroundImage}>
+      <View style={styles.overlay} />
+      <View style={styles.container}>
+        <Text style={styles.title}>Login</Text>
+        <View style={styles.inputContainer}>
+          <Icon name="envelope" size={20} color="white" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            placeholderTextColor="white"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <Icon name="lock" size={20} color="white" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            placeholderTextColor="white"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+          />
+        </View>
+        <Pressable style={styles.button} onPress={onPress}>
+          <Text style={styles.text}>LOGIN</Text>
+        </Pressable>
+      </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // semi-transparent black overlay
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     padding: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)', // semi-transparent background to make text readable
   },
   title: {
-    fontSize: 24,
+    fontSize: 32,
     marginBottom: 16,
     textAlign: 'center',
+    color: '#0056b3',
+    fontWeight: 'bold',
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: 'white', // white bottom border color
+  },
+  icon: {
+    marginRight: 8,
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 8,
-    marginVertical: 8,
-    borderRadius: 4,
+    flex: 1,
+    paddingVertical: 12,
+    backgroundColor: 'transparent',
+    fontSize: 16,
+    color: 'white',
   },
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
+    paddingVertical: 16,
     paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'black',
+    borderRadius: 8,
+    backgroundColor: '#ff6600',
+    marginTop: 16,
   },
   text: {
     fontSize: 16,
-    lineHeight: 21,
     fontWeight: 'bold',
-    letterSpacing: 0.25,
     color: 'white',
   },
 });
