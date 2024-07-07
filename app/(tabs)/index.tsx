@@ -76,6 +76,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import RegistrationScreen from '@/components/RegistrationScreen';
 import LoginScreen from '@/components/LoginScreen';
 import UserDetail from '@/components/userdetail';
+import ProfilePage from '@/components/ProfilePage';
+
 
 const Stack = createStackNavigator();
 
@@ -84,6 +86,7 @@ const App: React.FC = () => {
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Login">
         {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
+        <Stack.Screen name="Profile" component={ProfilePage} />
         <Stack.Screen name="Register" component={RegistrationScreen} />
         <Stack.Screen name="UserDetail" component={UserDetail} />
       </Stack.Navigator>
@@ -93,3 +96,66 @@ const App: React.FC = () => {
 
 export default App;
 
+// import React, { useState } from 'react';
+// import { View } from 'react-native';
+// import ChatList from '@/components/ChatList';
+// import ChatScreen from '@/components/ChartScreen';
+
+
+// type Chat = {
+//   id: string;
+//   name: string;
+//   lastMessage: string;
+//   image: string;
+// };
+
+// const App: React.FC = () => {
+//   const [currentChat, setCurrentChat] = useState<Chat | null>(null);
+
+//   const chats: Chat[] = [
+//     {
+//       id: '1',
+//       name: 'Shane Martinez',
+//       lastMessage: 'Hey, how are you?',
+//       image: 'https://via.placeholder.com/50',
+//     },
+//     {
+//       id: '2',
+//       name: 'Katie Keller',
+//       lastMessage: 'See you tomorrow!',
+//       image: 'https://via.placeholder.com/50',
+//     },
+//     {
+//       id: '3',
+//       name: 'Stephen Ward',
+//       lastMessage: 'Meeting at 5 PM',
+//       image: 'https://via.placeholder.com/50',
+//     },
+//     {
+//       id: '4',
+//       name: 'Marvin Pratt',
+//       lastMessage: 'Got it, thanks!',
+//       image: 'https://via.placeholder.com/50',
+//     },
+//   ];
+
+//   const handleChatPress = (chat: Chat) => {
+//     setCurrentChat(chat);
+//   };
+
+//   const handleBackPress = () => {
+//     setCurrentChat(null);
+//   };
+
+//   return (
+//     <View style={{ flex: 1 }}>
+//       {currentChat ? (
+//         <ChatScreen user={currentChat} onBackPress={handleBackPress} />
+//       ) : (
+//         <ChatList chats={chats} onChatPress={handleChatPress} />
+//       )}
+//     </View>
+//   );
+// };
+
+// export default App;
