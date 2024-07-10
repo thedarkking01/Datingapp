@@ -77,6 +77,7 @@ import RegistrationScreen from '@/components/RegistrationScreen';
 import LoginScreen from '@/components/LoginScreen';
 import UserDetail from '@/components/userdetail';
 import ProfilePage from '@/components/ProfilePage';
+import NotificationScreen from '@/components/NotificationScreen';
 
 
 const Stack = createStackNavigator();
@@ -85,6 +86,7 @@ const App: React.FC = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Notifications" component={NotificationScreen} />
         {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
         <Stack.Screen name="Profile" component={ProfilePage} />
         <Stack.Screen name="Register" component={RegistrationScreen} />
