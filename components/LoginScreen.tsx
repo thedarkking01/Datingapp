@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     marginBottom: 16,
     textAlign: 'center',
-    color: '#0056b3',
+    // color: '#0056b3',
+    color:'white',
     fontWeight: 'bold',
   },
   inputContainer: {

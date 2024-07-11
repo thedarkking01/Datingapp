@@ -86,9 +86,9 @@ const App: React.FC = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Notifications" component={NotificationScreen} />
+        {/* <Stack.Screen name="Notifications" component={NotificationScreen} /> */}
         {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
-        <Stack.Screen name="Profile" component={ProfilePage} />
+        {/* <Stack.Screen name="Profile" component={ProfilePage} /> */}
         <Stack.Screen name="Register" component={RegistrationScreen} />
         <Stack.Screen name="UserDetail" component={UserDetail} />
       </Stack.Navigator>
