@@ -98,6 +98,72 @@ const App: React.FC = () => {
 
 export default App;
 
+
+
+
+// import React, { useState } from 'react';
+// import { View } from 'react-native';
+// import ChatList from '@/components/ChatList';
+// import ChatScreen from '@/components/ChartScreen';
+
+// type Chat = {
+//   id: string;
+//   name: string;
+//   lastMessage: string;
+//   image: string;
+// };
+
+// const App: React.FC = () => {
+//   const [currentChat, setCurrentChat] = useState<Chat | null>(null);
+
+//   const chats: Chat[] = [
+//     {
+//       id: '1',
+//       name: 'Shane Martinez',
+//       lastMessage: 'Hey, how are you?',
+//       image: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nfGVufDB8fDB8fHww',
+//     },
+//     {
+//       id: '2',
+//       name: 'Katie Keller',
+//       lastMessage: 'See you tomorrow!',
+//       image: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nfGVufDB8fDB8fHww',
+//     },
+//     {
+//       id: '3',
+//       name: 'Stephen Ward',
+//       lastMessage: 'Meeting at 5 PM',
+//       image: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nfGVufDB8fDB8fHww',
+//     },
+//     {
+//       id: '4',
+//       name: 'Marvin Pratt',
+//       lastMessage: 'Got it, thanks!',
+//       image: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nfGVufDB8fDB8fHww',
+//     },
+//   ];
+
+//   const handleChatPress = (chat: Chat) => {
+//     setCurrentChat(chat);
+//   };
+
+//   const handleBackPress = () => {
+//     setCurrentChat(null);
+//   };
+
+//   return (
+//     <View style={{ flex: 1 }}>
+//       {currentChat ? (
+//         <ChatScreen user={currentChat} onBackPress={handleBackPress} />
+//       ) : (
+//         <ChatList chats={chats} onChatPress={handleChatPress} />
+//       )}
+//     </View>
+//   );
+// };
+
+// export default App;
+
 // import React, { useState } from 'react';
 // import { View } from 'react-native';
 // import ChatList from '@/components/ChatList';
